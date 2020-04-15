@@ -1,0 +1,54 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-primary mb-3">
+    <div class="container">
+        <a href="/" class="navbar-brand">Plats&Recettes</a>
+        <button class="navbar-toggler" type="button" datatoggle="collapse" data-target="#mobile-nav">
+ <span class="navbar-toggle-icon"></span>
+ </button>
+        <div class="collapse navbar-collapse" id="mobile-nav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="/" class="nav-link">Home</a>
+                </li>
+
+
+
+
+
+                {% if app.user %}
+
+                <li class="nav-item">
+                    <a href="{{ path('new_plat')}}" class="nav-link">Ajouter un plat</a>
+
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{ path('new_score')}}" class="nav-link">Ajouter Score</a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a href="{{ path('new_category')}}" class="nav-link">Ajouter catégorie</a>
+                </li>
+
+                {% endif %}
+
+                <li class="nav-item">
+                    <a href="{{ path('plat_par_cat')}}" class="navlink">Recherche par catégorie</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{ path('security_login')}}" class="nav-link">Connexion</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{ path('security_registration')}}" class="nav-link">Inscription</a>
+                </li>
+
+
+
+
+
+            </ul>
+        </div>
+    </div>
+</nav>

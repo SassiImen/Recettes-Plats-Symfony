@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %} {% block title%} Plats pour s'échange les recettes{% endblock %} {% block body %} {{ form_start(form) }}
+<div class="form-row align-items-end">
+    <div class="col">
+        {{ form_row(form.titre) }}
+    </div>
+    <div class="col">
+        <div class="form-group">
+            <button type="submit" class="btn btn-success">Rechercher</button>
+        </div>
+    </div>
+</div>
+{{ form_end(form) }} {% if plats %}
+<table id="plats" class="table table-striped">
+    <thead>
+        <tr>
+            <th>Plats de jour</th>
+            <th>Recette</th>
+            <th>Temps de cuissant</th>
+            <th>Score</th>
+            <th>Categorie</th>>
+
+        </tr>
+    </thead>
+    <tbody>
+        {% for plat in plats %}
+        <tr>
+            <td>{{ plat.titre }}</td>
+            <td>{{ plat.ingredients }}</td>
+            <td>{{ plat.tempsDeCuissant }}</td>
+            <td>{{ plat.score.poucentage }}</td>
+            <td>{{ plat.category.titre }}</td>
+            <td>
+                <a href="/plat/{{ plat.id }}" class="btn btn-dark">Détails</a>
+                <a href="/plat/edit/{{ plat.id }}" class="btn btn-dark">Modifier</a>
+
+                <a href="/plat/delete/{{ plat.id }}" class="btn btn-danger" onclick="return confirm('Etesvous sûr de supprimer cet plat?');">Supprimer</a>
+
+
+
+            </td>
+
+        </tr>
+        {% endfor %}
+
+
+        <img src="{{ asset ('assets/img/Stovrébelge.jpg') }}" alt="">
+    </tbody>
+</table>
+
+
+{% else %}
+
+
+<p>Aucun Plats</p>
+{% endif %} {% endblock %}

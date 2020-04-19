@@ -30,12 +30,10 @@
             <td>{{ plat.score.poucentage }}</td>
             <td>{{ plat.category.titre }}</td>
             <td>
-                <a href="/plat/{{ plat.id }}" class="btn btn-dark">Détails</a>
+                <a href="/plat/{{ plat.id }}" class="btn btn-dark">Détails</a> {% if is_granted('ROLE_EDITOR') %}
                 <a href="/plat/edit/{{ plat.id }}" class="btn btn-dark">Modifier</a>
 
-                <a href="/plat/delete/{{ plat.id }}" class="btn btn-danger" onclick="return confirm('Etesvous sûr de supprimer cet plat?');">Supprimer</a>
-
-
+                <a href="/plat/delete/{{ plat.id }}" class="btn btn-danger" onclick="return confirm('Etesvous sûr de supprimer cet plat?');">Supprimer</a> {% endif %}
 
             </td>
 

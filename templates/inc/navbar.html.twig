@@ -14,7 +14,7 @@
 
 
 
-                {% if app.user %}
+                {% if is_granted('ROLE_EDITOR') %}
 
                 <li class="nav-item">
                     <a href="{{ path('new_plat')}}" class="nav-link">Ajouter un plat</a>
@@ -45,7 +45,11 @@
                 </li>
 
 
-
+                {% if is_granted('ROLE_ADMIN') %}
+                <li class="nav-item">
+                    <a href="{{ path('admin_utilisateurs')}}" class="navlink">Administration</a>
+                </li>
+                {% endif %}
 
 
             </ul>

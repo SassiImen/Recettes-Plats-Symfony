@@ -21,6 +21,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 class IndexController extends AbstractController
 {
@@ -72,6 +73,7 @@ public function save() {
    
 
     /**
+     * @IsGranted("ROLE_EDITOR")
  * @Route("/plat/new", name="new_plat")
  * Method({"GET", "POST"})
  */
@@ -102,6 +104,7 @@ public function show($id) {
 
 
      /**
+     * @IsGranted("ROLE_EDITOR")
  * @Route("/plat/edit/{id}", name="edit_plat")
  * Method({"GET", "POST"})
  */
@@ -125,6 +128,7 @@ public function edit(Request $request, $id) {
  
 
  /**
+  * @IsGranted("ROLE_EDITOR")
      * @Route("/plat/delete/{id}",name="delete_plat")
      * @Method({"DELETE"})
      */

@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20200414173230 extends AbstractMigration
+final class Version20200416211423 extends AbstractMigration
 {
     public function getDescription() : string
     {
@@ -22,7 +22,8 @@ final class Version20200414173230 extends AbstractMigration
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE user ADD roles JSON NOT NULL');
+        $this->addSql('ALTER TABLE plat CHANGE score_id score_id INT DEFAULT NULL, CHANGE category_id category_id INT DEFAULT NULL');
+        $this->addSql('ALTER TABLE user CHANGE roles roles JSON NOT NULL');
     }
 
     public function down(Schema $schema) : void
@@ -30,6 +31,7 @@ final class Version20200414173230 extends AbstractMigration
         // this down() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE user DROP roles');
+        $this->addSql('ALTER TABLE plat CHANGE score_id score_id INT DEFAULT NULL, CHANGE category_id category_id INT DEFAULT NULL');
+        $this->addSql('ALTER TABLE user CHANGE roles roles LONGTEXT CHARACTER SET utf8mb4 NOT NULL COLLATE `utf8mb4_bin`');
     }
 }

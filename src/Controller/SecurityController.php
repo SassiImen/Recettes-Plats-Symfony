@@ -32,6 +32,9 @@ class SecurityController extends AbstractController
  //l'objet $em sera affecté automatiquement grâce à l'injection des dépendances de symfony 4
  $em->persist($user);
  $em->flush();
+
+ $this->addFlash('success', 'Inscription reussite! Pour gérer vos recette Connectez-vous!');
+
  }
  return $this->render('security/registration.html.twig',
  ['form' =>$form->createView()]);
@@ -46,6 +49,8 @@ public function login(AuthenticationUtils $authenticationUtils)
 $error = $authenticationUtils->getLastAuthenticationError();
 // last username entered by the user
 $lastUsername = $authenticationUtils->getLastUsername();
+
+
 
 return $this->render('security/login.html.twig',
 ['lastUsername'=>$lastUsername,'error' => $error]);

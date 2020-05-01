@@ -1,6 +1,7 @@
 # Recettes-Plats-Symfony
 Sujet :
-Plateforme des recettes & Plats.
+Plateforme des recettes & Plats. 
+
 Explication de projet : 
 Le projet mets en place un site web pour s’échanger des recettes de cuisine. Ce site web ou plateforme d’échange de recettes cherche à rassembler les gens qui veulent s’inspirer au niveau culinaire pendant la période de confinement du Covid-19. 
 C’est pour cela que les recettes seront organisé selon des catégories spécifique à la période de confinement. 
@@ -23,11 +24,13 @@ Plats difficile
 https://www.femmeactuelle.fr/sante/alimentation-equilibree/coronavirus-que-faut-il-manger-quand-on-est-malade-2092661
 
 
-Les rôles
+Les rôles:
 Les rôles suivants sont configuré dans la BD
 Administrateur: le seul rôle qui peux paramétrer les catégories et les critères d’attribution
 Visiteur 
 Utilisateur connecté/enregistré 
 Editeurs/Validateur 
 Partenaires
+
+Installer
 
